@@ -1,0 +1,64 @@
+# api call for creating user
+###
+POST http://127.0.0.1:8000/course/register/ 
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "email":"admin@gmail.com",
+    "password":"Password@123"
+}
+
+# api call for list courses
+###
+GET http://127.0.0.1:8000/course/list/?name=data
+Accept: application/json
+Authorization: Basic admin:Password@123
+
+
+#api call for creating courses 
+###
+POST http://127.0.0.1:8000/course/create/ 
+Content-Type: application/json
+Authorization: Basic admin:Password@123
+
+{
+    "name":"ba",
+    "description":"ba",
+    "duration":"6 months",
+    "trainer":"yadhu",
+    "language":"python",
+    "fee":"20000.00"
+
+}
+
+# api call for retrieve course
+###
+GET http://127.0.0.1:8000/course/15/ 
+Accept: application/json
+Authorization: Basic admin:Password@123
+
+# api call for updating course details 
+###
+PUT http://127.0.0.1:8000/course/15/ 
+Content-Type: application/json
+Authorization: Basic admin:Password@123
+
+{
+  "id": 15,
+  "name": "arvr",
+  "description": "arvr",
+  "duration": "6 months",
+  "trainer": "yadhu",
+  "language": "python",
+  "fee": "20000.00",
+  "cover_picture": null,
+  "created_at": "2026-11-05T15:40:16.066481Z"
+}
+
+
+#api call for delete course
+###
+DELETE  http://127.0.0.1:8000/course/15/ 
+Accept: application/json
+Authorization: Basic admin:Password@123
